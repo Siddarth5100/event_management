@@ -1,0 +1,114 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "EVE-.###",
+ "creation": "2026-01-08 15:57:33.194256",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "event_name",
+  "from_time",
+  "to_time",
+  "date",
+  "section_break_bnmy",
+  "location",
+  "capacity",
+  "section_break_ncn3",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Event Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location"
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "in_list_view": 1,
+   "label": "From Time"
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "label": "Date"
+  },
+  {
+   "fieldname": "section_break_bnmy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_ncn3",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-12 18:03:32.419128",
+ "modified_by": "Administrator",
+ "module": "Event Management",
+ "name": "Event Detail",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Event Manager",
+   "select": 1,
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "event_name",
+ "track_changes": 1
+}
