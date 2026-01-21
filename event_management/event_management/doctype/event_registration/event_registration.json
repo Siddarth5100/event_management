@@ -1,15 +1,22 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:event_detail",
+ "autoname": "REG-.ID-.###",
  "creation": "2026-01-08 18:16:00.794639",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "amended_from",
-  "event_detail",
   "participant",
-  "organiser_name"
+  "email",
+  "mobile_number",
+  "organiser_name",
+  "section_break_zbhg",
+  "event_detail",
+  "event_date",
+  "column_break_me1d",
+  "from_time",
+  "to_time"
  ],
  "fields": [
   {
@@ -25,32 +32,80 @@
   {
    "fieldname": "event_detail",
    "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Event Detail",
+   "in_preview": 1,
+   "label": "Event Name",
    "options": "Event Detail",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "participant",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Participant",
+   "label": "Participant Name",
    "options": "Participant",
    "reqd": 1
   },
   {
+   "fetch_from": "event_detail.date",
+   "fieldname": "event_date",
+   "fieldtype": "Date",
+   "label": "Event Date",
+   "options": "Event Detail",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "event_detail.from_time",
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "options": "Event Detail",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "event_detail.to_time",
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "options": "Event Detail",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_zbhg",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "participant.mobile_number",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "options": "Participant",
+   "read_only": 1
+  },
+  {
    "fieldname": "organiser_name",
    "fieldtype": "Link",
+   "hidden": 1,
    "label": "Organiser Name",
    "options": "Organiser"
+  },
+  {
+   "fetch_from": "participant.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email Id",
+   "options": "Participant",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_me1d",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-14 11:36:25.197907",
+ "modified": "2026-01-21 13:07:32.594905",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Registration",
@@ -84,13 +139,27 @@
    "write": 1
   },
   {
+   "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Participant",
-   "share": 1
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Organiser",
+   "share": 1,
+   "write": 1
   }
  ],
  "quick_entry": 1,
@@ -98,6 +167,5 @@
  "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": [],
- "title_field": "event_detail"
+ "states": []
 }

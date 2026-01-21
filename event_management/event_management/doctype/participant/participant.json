@@ -9,11 +9,9 @@
   "participant_name",
   "email",
   "mobile_number",
-  "event_name",
   "column_break_at9x",
   "gender",
-  "age",
-  "event_date"
+  "age"
  ],
  "fields": [
   {
@@ -44,31 +42,18 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Email Id",
-   "reqd": 1
+   "reqd": 1,
+   "unique": 1
   },
   {
    "fieldname": "column_break_at9x",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "event_name",
-   "fieldtype": "Link",
-   "label": "Event Name",
-   "options": "Event Detail"
-  },
-  {
-   "fetch_from": "event_name.date",
-   "fieldname": "event_date",
-   "fieldtype": "Link",
-   "label": "Event Date",
-   "options": "Event Detail",
-   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-14 11:22:46.113959",
+ "modified": "2026-01-21 12:36:50.093280",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Participant",
@@ -100,12 +85,26 @@
    "write": 1
   },
   {
+   "create": 1,
+   "delete": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
    "role": "Participant",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Organiser",
    "share": 1,
    "write": 1
   }
