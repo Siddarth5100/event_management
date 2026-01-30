@@ -10,10 +10,10 @@
   "participant",
   "email",
   "mobile_number",
-  "organiser_name",
   "section_break_zbhg",
   "event_detail",
   "event_date",
+  "organiser_name",
   "column_break_me1d",
   "from_time",
   "to_time"
@@ -30,6 +30,7 @@
    "search_index": 1
   },
   {
+   "fetch_from": "amended_from.event_detail",
    "fieldname": "event_detail",
    "fieldtype": "Link",
    "in_preview": 1,
@@ -50,24 +51,21 @@
    "fieldname": "event_date",
    "fieldtype": "Date",
    "label": "Event Date",
-   "options": "Event Detail",
-   "read_only": 1
+   "options": "Event Detail"
   },
   {
    "fetch_from": "event_detail.from_time",
    "fieldname": "from_time",
    "fieldtype": "Time",
    "label": "From Time",
-   "options": "Event Detail",
-   "read_only": 1
+   "options": "Event Detail"
   },
   {
    "fetch_from": "event_detail.to_time",
    "fieldname": "to_time",
    "fieldtype": "Time",
    "label": "To Time",
-   "options": "Event Detail",
-   "read_only": 1
+   "options": "Event Detail"
   },
   {
    "fieldname": "section_break_zbhg",
@@ -84,7 +82,6 @@
   {
    "fieldname": "organiser_name",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Organiser Name",
    "options": "Organiser"
   },
@@ -105,7 +102,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-21 13:07:32.594905",
+ "modified": "2026-01-27 18:33:36.673956",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Registration",

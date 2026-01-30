@@ -7,13 +7,10 @@
  "field_order": [
   "organiser_name",
   "role",
-  "available_date",
-  "from_time",
-  "to_time",
-  "column_break_qc69",
+  "event_name",
+  "column_break_8jdr",
   "mobile_number",
-  "email_id",
-  "event_name"
+  "email_id"
  ],
  "fields": [
   {
@@ -21,21 +18,20 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Organiser Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
-   "default": "Admin",
    "fieldname": "role",
    "fieldtype": "Select",
    "label": "Role",
-   "options": "Trainer\nTutor\nCo-Oridinator\nAdmin",
+   "options": "Tutor\nTrainer",
    "sort_options": 1
   },
   {
    "fieldname": "email_id",
    "fieldtype": "Data",
-   "label": "Email Id"
+   "label": "Email Id",
+   "reqd": 1
   },
   {
    "fieldname": "mobile_number",
@@ -43,36 +39,20 @@
    "label": "Mobile Number"
   },
   {
-   "fieldname": "from_time",
-   "fieldtype": "Time",
-   "label": "From Time"
-  },
-  {
-   "fieldname": "to_time",
-   "fieldtype": "Time",
-   "label": "To Time"
-  },
-  {
-   "fieldname": "available_date",
-   "fieldtype": "Date",
-   "label": "Available Date"
-  },
-  {
-   "fieldname": "column_break_qc69",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "event_name",
    "fieldtype": "Link",
-   "hidden": 1,
    "label": "Event Name",
    "options": "Event Detail"
+  },
+  {
+   "fieldname": "column_break_8jdr",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-21 13:42:40.635835",
+ "modified": "2026-01-22 12:11:12.641415",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Organiser",

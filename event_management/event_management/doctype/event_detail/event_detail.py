@@ -7,12 +7,14 @@ from frappe.model.document import Document
 
 class EventDetail(Document):
 	def validate(self):
+
 		# capacity check
 		if self.capacity <= 0:
 			frappe.throw("Capacity should not be in negative or empty")
 
 		if self.capacity >= 50:
-			frappe.throw("Capacity should not be more than 50")
+			frappe.throw("Limit exceeds! Should not be more than 50")
+
 
 		# duplicate event name and date check
 		if not self.event_name or not self.date:
@@ -23,14 +25,15 @@ class EventDetail(Document):
 			{
 				"event_name": self.event_name,
 				"date": self.date,
-				"name":["!=", self.name]
+				"name": ["!=", self.name]
 			}
 		)
 
 		if exists:
 			frappe.throw("Event with same name and date already exists")
 
-		# from time to time check
+
+		# validate from time and to time
 		if self.from_time >= self.to_time:
 			frappe.throw("From time cannot be greater than to time")
 

@@ -10,8 +10,7 @@
   "email",
   "mobile_number",
   "column_break_at9x",
-  "gender",
-  "age"
+  "gender"
  ],
  "fields": [
   {
@@ -20,11 +19,6 @@
    "in_list_view": 1,
    "label": "Participant Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "age",
-   "fieldtype": "Int",
-   "label": "Age"
   },
   {
    "fieldname": "gender",
@@ -53,7 +47,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-21 12:36:50.093280",
+ "modified": "2026-01-22 11:46:47.781299",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Participant",

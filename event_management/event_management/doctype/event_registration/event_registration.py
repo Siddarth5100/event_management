@@ -3,20 +3,60 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.model.docstatus import DocStatus
+from frappe.utils import getdate
 
 
 class EventRegistration(Document):
 	def validate(self):
+
+		# validate is user already registered to the event
 		exists = frappe.db.exists(
 			"Event Registration",
 			{
 				"participant": self.participant,
 				"email": self.email,
 				"event_detail": self.event_detail,
-				"event_date": self.event_date,
 				"name": ["!=", self.name]
 			}
 		)
 	
 		if exists:
 			frappe.throw("Already registered to this event, select new one")
+		
+
+	# def before_save(self):
+	# 	if not self.event_detail:
+	# 		return
+		
+	# 	organiser = frappe.db.get_value(
+	# 		"Organiser",
+	# 		{
+	# 			"event_detail": self.event_name
+	# 		},
+	# 		"name"
+	# 	)
+
+	# 	if organiser:
+	# 		self.organiser = organiser
+
+	# 	else:
+	# 		frappe.throw("Organiser unavailable")
+
+
+	def on_submit(self):
+		if not self.email:
+			return
+		
+		frappe.sendmail(
+			recipients = self.email,
+			subject = "Event Registration Confirmed",
+			message = f"""
+		Hello {self.participant},
+
+		Your registration for the event "{self.event_detail}" has been successfully submitted.
+
+		Thank you.
+		""",
+			now = True
+		)

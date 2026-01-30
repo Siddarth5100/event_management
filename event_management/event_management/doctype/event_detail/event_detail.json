@@ -26,11 +26,14 @@
    "reqd": 1
   },
   {
+   "default": "Chennai",
    "fieldname": "location",
-   "fieldtype": "Data",
+   "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Location",
-   "placeholder": "Enter location"
+   "options": "Chennai\nCoimbatore\nBangalore",
+   "placeholder": "Enter location",
+   "sort_options": 1
   },
   {
    "fieldname": "from_time",
@@ -71,7 +74,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-21 12:36:13.378662",
+ "modified": "2026-01-27 17:55:51.468380",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Detail",

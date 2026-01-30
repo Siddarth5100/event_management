@@ -1,0 +1,32 @@
+{
+ "attach_files": "",
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "",
+ "creation": "2026-01-27 15:09:17.615148",
+ "days_in_advance": 0,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Event Registration",
+ "enabled": 1,
+ "event": "Submit",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "",
+ "message_type": "HTML",
+ "modified": "2026-01-29 15:49:30.925172",
+ "modified_by": "Administrator",
+ "module": "Event Management",
+ "name": "Event Registration Mail",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_document_field": ""
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "sender": "Siddarthsiddhu5100",
+ "sender_email": "siddarthsiddhu5100@gmail.com",
+ "subject": "{{ doc.event_detail }} Test"
+}

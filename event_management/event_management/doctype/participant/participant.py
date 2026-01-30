@@ -7,18 +7,19 @@ from frappe.model.document import Document
 
 class Participant(Document):
 	def validate(self):
-		if self.email:
-			exists = frappe.db.exists(
-				"Participant",
-				{
-					"email": self.email,
-					"name": ["!=", self.name]
-				}
-			)
+
+		# validate exisitng user
+		if not self.email:
+			return
+		
+		exists = frappe.db.exists(
+			"Participant",
+			{
+				"email": self.email,
+				"name": ["!=", self.name]
+			}
+		)
 			
-			if exists:
-				frappe.throw(
-					"User already exist"
-				)
-				
-	
+		if exists:
+			frappe.throw("User already exist!")
+
