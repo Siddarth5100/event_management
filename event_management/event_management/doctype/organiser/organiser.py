@@ -7,6 +7,7 @@ from frappe.model.document import Document
 
 class Organiser(Document):
 	def validate(self):
+		
 		# validate organiser is already exist
 		if not self.email_id:
 			return

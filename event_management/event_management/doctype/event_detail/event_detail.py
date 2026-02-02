@@ -3,6 +3,7 @@
 
 import frappe
 from frappe.model.document import Document
+from frappe.utils import getdate
 
 
 class EventDetail(Document):
@@ -25,16 +26,19 @@ class EventDetail(Document):
 			{
 				"event_name": self.event_name,
 				"date": self.date,
+				"from_time": self.from_time,
+				"to_time": self.to_time,
 				"name": ["!=", self.name]
 			}
 		)
 
 		if exists:
-			frappe.throw("Event with same name and date already exists")
+			frappe.throw("Event with same date and time already exists")
 
 
 		# validate from time and to time
 		if self.from_time >= self.to_time:
 			frappe.throw("From time cannot be greater than to time")
-
 		
+		if getdate(self.date) < getdate():
+			frappe.throw("Enter current or future date")

@@ -23,26 +23,21 @@ class EventRegistration(Document):
 	
 		if exists:
 			frappe.throw("Already registered to this event, select new one")
-		
 
-	# def before_save(self):
-	# 	if not self.event_detail:
-	# 		return
-		
-	# 	organiser = frappe.db.get_value(
-	# 		"Organiser",
-	# 		{
-	# 			"event_detail": self.event_name
-	# 		},
-	# 		"name"
-	# 	)
-
-	# 	if organiser:
-	# 		self.organiser = organiser
-
-	# 	else:
-	# 		frappe.throw("Organiser unavailable")
-
+		# Organiser validation
+		organiser_name = frappe.db.exists(
+			"Event Registration",
+			{
+				"event_date": self.event_date,
+				"event_detail": ("!=", self.event_detail),
+				"organiser_name": self.organiser_name,
+				"from_time": ("=", self.from_time),
+				"to_time": ("=", self.to_time),
+				"docstatus": 0
+			}
+		)
+		if organiser_name:
+			frappe.throw("Organiser already assigned")
 
 	def on_submit(self):
 		if not self.email:
@@ -60,3 +55,5 @@ class EventRegistration(Document):
 		""",
 			now = True
 		)
+
+	

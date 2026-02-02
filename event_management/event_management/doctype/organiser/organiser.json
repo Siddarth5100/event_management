@@ -7,7 +7,6 @@
  "field_order": [
   "organiser_name",
   "role",
-  "event_name",
   "column_break_8jdr",
   "mobile_number",
   "email_id"
@@ -39,12 +38,6 @@
    "label": "Mobile Number"
   },
   {
-   "fieldname": "event_name",
-   "fieldtype": "Link",
-   "label": "Event Name",
-   "options": "Event Detail"
-  },
-  {
    "fieldname": "column_break_8jdr",
    "fieldtype": "Column Break"
   }
@@ -52,7 +45,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-22 12:11:12.641415",
+ "modified": "2026-02-02 00:15:39.302136",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Organiser",

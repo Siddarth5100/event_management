@@ -27,6 +27,7 @@
    "options": "Male\nFemale\nOthers"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "mobile_number",
    "fieldtype": "Data",
    "label": "Mobile Number"
@@ -47,7 +48,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-22 11:46:47.781299",
+ "modified": "2026-02-02 16:57:28.190776",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Participant",

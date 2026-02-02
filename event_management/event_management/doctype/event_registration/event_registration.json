@@ -9,6 +9,7 @@
   "amended_from",
   "participant",
   "email",
+  "column_break_dvgt",
   "mobile_number",
   "section_break_zbhg",
   "event_detail",
@@ -58,14 +59,16 @@
    "fieldname": "from_time",
    "fieldtype": "Time",
    "label": "From Time",
-   "options": "Event Detail"
+   "options": "Event Detail",
+   "read_only": 1
   },
   {
    "fetch_from": "event_detail.to_time",
    "fieldname": "to_time",
    "fieldtype": "Time",
    "label": "To Time",
-   "options": "Event Detail"
+   "options": "Event Detail",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_zbhg",
@@ -96,13 +99,17 @@
   {
    "fieldname": "column_break_me1d",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_dvgt",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-27 18:33:36.673956",
+ "modified": "2026-02-02 11:55:10.540463",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Registration",

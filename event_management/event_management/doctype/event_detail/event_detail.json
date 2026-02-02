@@ -13,6 +13,7 @@
   "section_break_bnmy",
   "location",
   "capacity",
+  "organiser",
   "section_break_ncn3",
   "description"
  ],
@@ -69,12 +70,19 @@
   {
    "fieldname": "section_break_ncn3",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "organiser",
+   "fieldtype": "Link",
+   "label": "Organiser",
+   "options": "Organiser",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-01-27 17:55:51.468380",
+ "modified": "2026-02-02 18:29:08.296696",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Detail",

@@ -1,0 +1,8 @@
+// Copyright (c) 2026, siddarth and contributors
+// For license information, please see license.txt
+
+frappe.query_reports["New script report(testing)"] = {
+	"filters": [
+
+	]
+};

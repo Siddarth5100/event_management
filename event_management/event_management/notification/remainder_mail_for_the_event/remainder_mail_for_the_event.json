@@ -1,0 +1,31 @@
+{
+ "attach_files": "",
+ "attach_print": 0,
+ "channel": "Email",
+ "condition": "doc.docstatus == 1",
+ "creation": "2026-02-02 00:56:07.899579",
+ "date_changed": "event_date",
+ "days_in_advance": 1,
+ "docstatus": 0,
+ "doctype": "Notification",
+ "document_type": "Event Registration",
+ "enabled": 1,
+ "event": "Days Before",
+ "idx": 0,
+ "is_standard": 1,
+ "message": "Hey, this is a confirmation mail for the event you registered",
+ "message_type": "HTML",
+ "modified": "2026-02-02 12:50:49.859575",
+ "modified_by": "Administrator",
+ "module": "Event Management",
+ "name": "Remainder mail for the Event",
+ "owner": "Administrator",
+ "recipients": [
+  {
+   "receiver_by_role": "Participant"
+  }
+ ],
+ "send_system_notification": 0,
+ "send_to_all_assignees": 0,
+ "subject": "{{ doc.event_detail }} Event Remainder mail!"
+}

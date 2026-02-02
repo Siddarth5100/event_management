@@ -1,0 +1,38 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-02-02 01:32:04.296817",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": null,
+ "modified": "2026-02-02 01:32:48.216310",
+ "modified_by": "Administrator",
+ "module": "Event Management",
+ "name": "Event details(Testing)",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT er.email, er.event_date, er.participant, p.participant_name, ed.name, ed.event_name\nFROM `tabEvent Registration` AS er\nINNER JOIN `tabParticipant` AS p\nON p.name = er.participant\nInner JOIN `tabEvent Detail` AS ed\nON ed.name = er.event_detail\nWHERE er.docstatus = 0;",
+ "ref_doctype": "Event Registration",
+ "report_name": "Event details(Testing)",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Event Manager"
+  },
+  {
+   "role": "Participant"
+  },
+  {
+   "role": "Organiser"
+  }
+ ],
+ "timeout": 0
+}
