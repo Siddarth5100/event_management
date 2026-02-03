@@ -86,7 +86,7 @@
    "fieldname": "organiser_name",
    "fieldtype": "Link",
    "label": "Organiser Name",
-   "options": "Organiser"
+   "options": "Event Detail"
   },
   {
    "fetch_from": "participant.email",
@@ -109,7 +109,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-02 11:55:10.540463",
+ "modified": "2026-02-03 16:48:50.124064",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Registration",

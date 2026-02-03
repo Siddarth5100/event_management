@@ -9,10 +9,14 @@ from frappe.utils import getdate
 class EventDetail(Document):
 	def validate(self):
 
+		# if not self.is_new():
+		# 	frappe.throw("Record already exist, can't edit")
+
 		# capacity check
 		if self.capacity <= 0:
 			frappe.throw("Capacity should not be in negative or empty")
-
+		
+		# just to check added this validation
 		if self.capacity >= 50:
 			frappe.throw("Limit exceeds! Should not be more than 50")
 
@@ -42,3 +46,23 @@ class EventDetail(Document):
 		
 		if getdate(self.date) < getdate():
 			frappe.throw("Enter current or future date")
+
+		# # get organiser details from db
+		# assign_organiser = frappe.get_all("Organiser", fields=["organiser_name", "role"])
+		
+		# # get event detail from db
+		# event_detail = frappe.get_all("Event Detail", fields=["date","organiser"]) 
+
+		# for org in assign_organiser:
+		# 	check_organiser = frappe.db.exists(
+		# 		"Event Detail",
+		# 		{
+		# 			"organiser": org.organiser_name
+		# 		}
+		# 	)
+
+		# 	if not check_organiser:
+		# 		# self.organiser = org.organiser_name
+		# 		event_detail
+
+		
