@@ -15,6 +15,7 @@
   "capacity",
   "column_break_ok2m",
   "organiser",
+  "role",
   "column_break_xtpc",
   "email",
   "mobile_number",
@@ -101,12 +102,18 @@
    "fieldtype": "Data",
    "label": "Mobile Number",
    "read_only": 1
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Data",
+   "label": "Role",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-05 11:18:23.082294",
+ "modified": "2026-02-05 18:48:10.208241",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Detail",

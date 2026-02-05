@@ -11,7 +11,6 @@ class EventRegistration(Document):
 	def validate(self):
 		# print("organiser value:", self.organiser, type(self.organiser))
 
-
 		# validate is user already registered to the event
 		exists = frappe.db.exists(
 			"Event Registration",
@@ -38,6 +37,7 @@ class EventRegistration(Document):
 				"docstatus": 0
 			}
 		)
+		
 		if organiser_name:
 			frappe.throw("Organiser already assigned")
 
@@ -57,5 +57,3 @@ class EventRegistration(Document):
 		""",
 			now = True
 		)
-
-	

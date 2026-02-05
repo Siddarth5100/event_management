@@ -65,9 +65,21 @@ class EventDetail(Document):
 				self.organiser = org.organiser_name
 				break
 			
-		# if not self.organiser:
-		# 	frappe.throw("No organiser")
+		if not self.organiser:
+			frappe.throw("No organiser")
+
+		organiser_detail = frappe.db.sql(
+			"""
+			SELECT role, mobile_number, email_id
+			FROM `tabOrganiser`
+			WHERE organiser_name = %s
+			""",
+			(self.organiser,),
+			as_dict = True
+		)
 		
-		
-		
+		if organiser_detail:
+			self.role =organiser_detail[0]["role"]
+			self.mobile_number = organiser_detail[0]["mobile_number"]
+			self.email = organiser_detail[0]["email_id"]
 		
