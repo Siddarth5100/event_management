@@ -15,6 +15,9 @@
   "capacity",
   "column_break_ok2m",
   "organiser",
+  "column_break_xtpc",
+  "email",
+  "mobile_number",
   "section_break_ncn3",
   "description"
  ],
@@ -28,13 +31,13 @@
    "reqd": 1
   },
   {
+   "allow_in_quick_entry": 1,
    "default": "Chennai",
    "fieldname": "location",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Location",
    "options": "Chennai\nCoimbatore\nBangalore",
-   "placeholder": "Enter location",
    "sort_options": 1
   },
   {
@@ -76,17 +79,34 @@
    "fieldname": "organiser",
    "fieldtype": "Data",
    "label": "Organiser",
-   "options": "Organiser"
+   "options": "Organiser",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_ok2m",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xtpc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-03 19:17:29.330975",
+ "modified": "2026-02-05 11:18:23.082294",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Detail",

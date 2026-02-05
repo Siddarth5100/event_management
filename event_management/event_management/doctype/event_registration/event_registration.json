@@ -14,10 +14,11 @@
   "section_break_zbhg",
   "event_detail",
   "event_date",
-  "organiser_name",
   "column_break_me1d",
   "from_time",
-  "to_time"
+  "to_time",
+  "section_break_vjrt",
+  "organiser"
  ],
  "fields": [
   {
@@ -83,12 +84,6 @@
    "read_only": 1
   },
   {
-   "fieldname": "organiser_name",
-   "fieldtype": "Link",
-   "label": "Organiser Name",
-   "options": "Event Detail"
-  },
-  {
    "fetch_from": "participant.email",
    "fieldname": "email",
    "fieldtype": "Data",
@@ -103,13 +98,25 @@
   {
    "fieldname": "column_break_dvgt",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_vjrt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "event_detail.organiser",
+   "fieldname": "organiser",
+   "fieldtype": "Data",
+   "label": "Organiser",
+   "options": "Event Detail",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-03 16:48:50.124064",
+ "modified": "2026-02-04 12:36:24.717188",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Registration",

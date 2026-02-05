@@ -9,6 +9,8 @@ from frappe.utils import getdate
 
 class EventRegistration(Document):
 	def validate(self):
+		# print("organiser value:", self.organiser, type(self.organiser))
+
 
 		# validate is user already registered to the event
 		exists = frappe.db.exists(
@@ -30,7 +32,7 @@ class EventRegistration(Document):
 			{
 				"event_date": self.event_date,
 				"event_detail": ("!=", self.event_detail),
-				"organiser_name": self.organiser_name,
+				"organiser": self.organiser,
 				"from_time": ("=", self.from_time),
 				"to_time": ("=", self.to_time),
 				"docstatus": 0

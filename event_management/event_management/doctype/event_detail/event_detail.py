@@ -9,16 +9,17 @@ from frappe.utils import getdate
 class EventDetail(Document):
 	def validate(self):
 
-		# if not self.is_new():
-		# 	frappe.throw("Record already exist, can't edit")
+		# to avoid editing the record once created
+		if not self.is_new():
+			frappe.throw("Record already exist, can't edit")
 
 		# capacity check
 		if self.capacity <= 0:
 			frappe.throw("Capacity should not be in negative or empty")
 		
-		# just to check added this validation
-		if self.capacity >= 50:
-			frappe.throw("Limit exceeds! Should not be more than 50")
+		# # just to check added this validation
+		# if self.capacity >= 50:
+		# 	frappe.throw("Limit exceeds! Should not be more than 50")
 
 
 		# duplicate event name and date check
@@ -28,7 +29,6 @@ class EventDetail(Document):
 		exists = frappe.db.exists(
 			"Event Detail",
 			{
-				"event_name": self.event_name,
 				"date": self.date,
 				"from_time": self.from_time,
 				"to_time": self.to_time,
@@ -47,22 +47,27 @@ class EventDetail(Document):
 		if getdate(self.date) < getdate():
 			frappe.throw("Enter current or future date")
 
-		# # get organiser details from db
-		# assign_organiser = frappe.get_all("Organiser", fields=["organiser_name", "role"])
+		# get organiser details from db
+		assign_organiser = frappe.get_all("Organiser", fields=["organiser_name", "role"])
 		
-		# # get event detail from db
-		# event_detail = frappe.get_all("Event Detail", fields=["date","organiser"]) 
+		# get event detail from db
+		event_detail = frappe.get_all("Event Detail", fields=["event_name","date","to_time","organiser"]) 
 
-		# for org in assign_organiser:
-		# 	check_organiser = frappe.db.exists(
-		# 		"Event Detail",
-		# 		{
-		# 			"organiser": org.organiser_name
-		# 		}
-		# 	)
+		for org in assign_organiser:
+			check_organiser = frappe.db.exists(
+				"Event Detail",
+				{
+					"organiser": org.organiser_name
+				}
+			)
 
-		# 	if not check_organiser:
-		# 		# self.organiser = org.organiser_name
-		# 		event_detail
-
+			if not check_organiser:
+				self.organiser = org.organiser_name
+				break
+			
+		# if not self.organiser:
+		# 	frappe.throw("No organiser")
+		
+		
+		
 		
