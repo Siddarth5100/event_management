@@ -8,10 +8,11 @@ from frappe.model.document import Document
 class Participant(Document):
 	def validate(self):
 
-		# validate exisitng user
+		# if empty field will return
 		if not self.email:
 			return
 		
+		# validate exisitng user
 		exists = frappe.db.exists(
 			"Participant",
 			{

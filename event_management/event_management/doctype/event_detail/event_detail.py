@@ -22,10 +22,11 @@ class EventDetail(Document):
 		# 	frappe.throw("Limit exceeds! Should not be more than 50")
 
 
-		# duplicate event name and date check
+		# if empty event name and date
 		if not self.event_name or not self.date:
 			return
 		
+		# duplicate name and date
 		exists = frappe.db.exists(
 			"Event Detail",
 			{
@@ -66,7 +67,7 @@ class EventDetail(Document):
 				break
 			
 		if not self.organiser:
-			frappe.throw("No organiser")
+			frappe.throw("No organiser available, Add new Organiser")
 
 		organiser_detail = frappe.db.sql(
 			"""
@@ -82,4 +83,4 @@ class EventDetail(Document):
 			self.role =organiser_detail[0]["role"]
 			self.mobile_number = organiser_detail[0]["mobile_number"]
 			self.email = organiser_detail[0]["email_id"]
-		
+

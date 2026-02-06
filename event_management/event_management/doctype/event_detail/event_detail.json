@@ -64,6 +64,7 @@
    "label": "Description"
   },
   {
+   "allow_in_quick_entry": 1,
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -113,7 +114,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-05 18:48:10.208241",
+ "modified": "2026-02-06 18:55:17.022660",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Detail",

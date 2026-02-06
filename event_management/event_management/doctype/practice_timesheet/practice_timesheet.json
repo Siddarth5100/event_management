@@ -1,0 +1,246 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-02-06 13:22:21.983339",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "series",
+  "company",
+  "customer",
+  "currency",
+  "exchange_rate",
+  "sales_invoice",
+  "column_break_bede",
+  "status",
+  "project",
+  "employee_detail_section",
+  "employee",
+  "employee_name",
+  "department",
+  "column_break_ttvb",
+  "user",
+  "start_date",
+  "end_date",
+  "section_break_ewny",
+  "time_sheets",
+  "section_break_zamr",
+  "total_working_hours",
+  "billing_details_section",
+  "total_billable_hours",
+  "base_total_billable_amount",
+  "base_total_billed_amount",
+  "base_total_costing_amount",
+  "column_break_hrrl",
+  "total_billed_hours",
+  "total_billable_amount",
+  "total_billed_amount",
+  "total_costing_amount",
+  "_amount_billed",
+  "section_break_pswk",
+  "note"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "series",
+   "fieldtype": "Data",
+   "label": "Series"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Data",
+   "label": "Customer"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Data",
+   "label": "Currency"
+  },
+  {
+   "fieldname": "exchange_rate",
+   "fieldtype": "Data",
+   "label": "Exchange Rate"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Data",
+   "label": "Sales Invoice"
+  },
+  {
+   "fieldname": "column_break_bede",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Data",
+   "label": "Project"
+  },
+  {
+   "bold": 1,
+   "fieldname": "employee_detail_section",
+   "fieldtype": "Section Break",
+   "label": "Employee Detail"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Data",
+   "label": "Employee"
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Data",
+   "label": "Department"
+  },
+  {
+   "fieldname": "column_break_ttvb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Data",
+   "label": "User"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Data",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Data",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "section_break_ewny",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "time_sheets",
+   "fieldtype": "Table",
+   "label": "Time Sheets",
+   "options": "Timesheet Detail",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_zamr",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_working_hours",
+   "fieldtype": "Data",
+   "label": "Total Working Hours"
+  },
+  {
+   "bold": 1,
+   "fieldname": "billing_details_section",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "fieldname": "total_billable_hours",
+   "fieldtype": "Data",
+   "label": "Total Billable Hours"
+  },
+  {
+   "fieldname": "base_total_billable_amount",
+   "fieldtype": "Data",
+   "label": "Base Total Billable Amount"
+  },
+  {
+   "fieldname": "base_total_billed_amount",
+   "fieldtype": "Data",
+   "label": "Base Total Billed Amount"
+  },
+  {
+   "fieldname": "base_total_costing_amount",
+   "fieldtype": "Data",
+   "label": "Base Total Costing Amount"
+  },
+  {
+   "fieldname": "column_break_hrrl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_billed_hours",
+   "fieldtype": "Data",
+   "label": "Total Billed Hours"
+  },
+  {
+   "fieldname": "total_billable_amount",
+   "fieldtype": "Data",
+   "label": "Total Billable Amount"
+  },
+  {
+   "fieldname": "total_billed_amount",
+   "fieldtype": "Data",
+   "label": "Total Billed Amount"
+  },
+  {
+   "fieldname": "total_costing_amount",
+   "fieldtype": "Data",
+   "label": "Total Costing Amount"
+  },
+  {
+   "fieldname": "_amount_billed",
+   "fieldtype": "Data",
+   "label": "% Amount Billed"
+  },
+  {
+   "fieldname": "section_break_pswk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "note",
+   "fieldtype": "Text Editor",
+   "label": "Note"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-02-06 15:51:21.785259",
+ "modified_by": "Administrator",
+ "module": "Event Management",
+ "name": "Practice Timesheet",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
