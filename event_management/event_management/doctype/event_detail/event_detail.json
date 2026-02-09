@@ -9,8 +9,8 @@
   "event_name",
   "from_time",
   "to_time",
-  "date",
   "section_break_bnmy",
+  "date",
   "location",
   "capacity",
   "column_break_ok2m",
@@ -64,7 +64,6 @@
    "label": "Description"
   },
   {
-   "allow_in_quick_entry": 1,
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
@@ -79,10 +78,9 @@
   },
   {
    "fieldname": "organiser",
-   "fieldtype": "Data",
+   "fieldtype": "Link",
    "label": "Organiser",
-   "options": "Organiser",
-   "read_only": 1
+   "options": "Organiser"
   },
   {
    "fieldname": "column_break_ok2m",
@@ -93,18 +91,21 @@
    "fieldtype": "Column Break"
   },
   {
+   "fetch_from": "organiser.email_id",
    "fieldname": "email",
    "fieldtype": "Data",
    "label": "Email",
    "read_only": 1
   },
   {
+   "fetch_from": "organiser.mobile_number",
    "fieldname": "mobile_number",
    "fieldtype": "Data",
    "label": "Mobile Number",
    "read_only": 1
   },
   {
+   "fetch_from": "organiser.role",
    "fieldname": "role",
    "fieldtype": "Data",
    "label": "Role",
@@ -114,7 +115,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-06 18:55:17.022660",
+ "modified": "2026-02-09 17:16:00.446392",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Detail",

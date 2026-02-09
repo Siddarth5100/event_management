@@ -139,8 +139,7 @@
    "fieldname": "time_sheets",
    "fieldtype": "Table",
    "label": "Time Sheets",
-   "options": "Timesheet Detail",
-   "reqd": 1
+   "options": "Timesheet Detail"
   },
   {
    "fieldname": "section_break_zamr",
@@ -219,7 +218,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-06 15:51:21.785259",
+ "modified": "2026-02-09 15:59:25.952680",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Practice Timesheet",

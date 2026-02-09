@@ -26,20 +26,33 @@ class EventDetail(Document):
 		if not self.event_name or not self.date:
 			return
 		
-		# duplicate name and date
+		# checking duplicate name and date for the event
 		exists = frappe.db.exists(
 			"Event Detail",
 			{
-				"date": self.date,
+				"event_name": self.event_name,
 				"from_time": self.from_time,
-				"to_time": self.to_time,
+				"date": self.date,
+				"location": self.location,
 				"name": ["!=", self.name]
 			}
 		)
 
 		if exists:
-			frappe.throw("Event with same date and time already exists")
+			frappe.throw("Event with same name, time and location already exists")
 
+		organiser_exist = frappe.db.exists(
+			"Event Detail",
+			{
+				"from_time": self.from_time,
+				"date": self.date,
+				"organiser": self.organiser,
+				"name": ["!=", self.name]
+			}
+		)
+
+		if organiser_exist:
+			frappe.throw("Organiser already assigned, assign new one")
 
 		# validate from time and to time
 		if self.from_time >= self.to_time:
@@ -48,39 +61,43 @@ class EventDetail(Document):
 		if getdate(self.date) < getdate():
 			frappe.throw("Enter current or future date")
 
-		# get organiser details from db
-		assign_organiser = frappe.get_all("Organiser", fields=["organiser_name", "role"])
 		
 		# get event detail from db
 		event_detail = frappe.get_all("Event Detail", fields=["event_name","date","to_time","organiser"]) 
 
-		for org in assign_organiser:
-			check_organiser = frappe.db.exists(
-				"Event Detail",
-				{
-					"organiser": org.organiser_name
-				}
-			)
 
-			if not check_organiser:
-				self.organiser = org.organiser_name
-				break
-			
-		if not self.organiser:
-			frappe.throw("No organiser available, Add new Organiser")
-
-		organiser_detail = frappe.db.sql(
-			"""
-			SELECT role, mobile_number, email_id
-			FROM `tabOrganiser`
-			WHERE organiser_name = %s
-			""",
-			(self.organiser,),
-			as_dict = True
-		)
+		# # get organiser details from db
+		# assign_organiser = frappe.get_all("Organiser", fields=["organiser_name", "role"])
 		
-		if organiser_detail:
-			self.role =organiser_detail[0]["role"]
-			self.mobile_number = organiser_detail[0]["mobile_number"]
-			self.email = organiser_detail[0]["email_id"]
+		# # auto assign organiser for the event
+		# for org in assign_organiser:
+		# 	check_organiser = frappe.db.exists(
+		# 		"Event Detail",
+		# 		{
+		# 			"organiser": org.organiser_name
+		# 		}
+		# 	)
+
+		# 	if not check_organiser:
+		# 		self.organiser = org.organiser_name
+		# 		break
+			
+		# if not self.organiser:
+		# 	frappe.throw("No organiser available, Add new Organiser")
+
+		# # SQL query to auto fetch the organiser details
+		# organiser_detail = frappe.db.sql(
+		# 	"""
+		# 	SELECT role, mobile_number, email_id
+		# 	FROM `tabOrganiser`
+		# 	WHERE organiser_name = %s
+		# 	""",
+		# 	(self.organiser,),
+		# 	as_dict = True
+		# )
+		
+		# if organiser_detail:
+		# 	self.role =organiser_detail[0]["role"]
+		# 	self.mobile_number = organiser_detail[0]["mobile_number"]
+		# 	self.email = organiser_detail[0]["email_id"]
 

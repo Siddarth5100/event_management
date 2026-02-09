@@ -4,7 +4,7 @@
 import frappe
 from frappe.model.document import Document
 
-
+frappe.get_list
 class Participant(Document):
 	def validate(self):
 
