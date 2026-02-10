@@ -22,9 +22,9 @@ class EventDetail(Document):
 		# 	frappe.throw("Limit exceeds! Should not be more than 50")
 
 
-		# if empty event name and date
-		if not self.event_name or not self.date:
-			return
+		# # if empty event name and date
+		# if not self.event_name or not self.date:
+		# 	frappe.throw("Date field is missing")
 		
 		# checking duplicate name and date for the event
 		exists = frappe.db.exists(
@@ -41,10 +41,12 @@ class EventDetail(Document):
 		if exists:
 			frappe.throw("Event with same name, time and location already exists")
 
+		# checking is organiser registered on the same date
 		organiser_exist = frappe.db.exists(
 			"Event Detail",
 			{
-				"from_time": self.from_time,
+				"from_time": ("<",self.to_time),
+				"to_time": (">",self.from_time),
 				"date": self.date,
 				"organiser": self.organiser,
 				"name": ["!=", self.name]
@@ -61,9 +63,22 @@ class EventDetail(Document):
 		if getdate(self.date) < getdate():
 			frappe.throw("Enter current or future date")
 
+		time_overlap = frappe.db.exists(
+			"Event Detail",
+			{
+				"date": self.date,
+				"from_time": ("<" ,self.to_time),
+				"to_time": (">", self.from_time),
+				"location": self.location
+			}
+		) 
+
+		if time_overlap:
+			frappe.throw("Already event exist on this time!")
+
 		
-		# get event detail from db
-		event_detail = frappe.get_all("Event Detail", fields=["event_name","date","to_time","organiser"]) 
+		# # get event detail from db
+		# event_detail = frappe.get_all("Event Detail", fields=["event_name","date","to_time","organiser"]) 
 
 
 		# # get organiser details from db
@@ -101,3 +116,5 @@ class EventDetail(Document):
 		# 	self.mobile_number = organiser_detail[0]["mobile_number"]
 		# 	self.email = organiser_detail[0]["email_id"]
 
+
+		

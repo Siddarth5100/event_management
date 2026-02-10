@@ -1,12 +1,13 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-02-07 13:08:27.056284",
+ "creation": "2026-02-10 18:57:26.092912",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "testing_name",
   "initial",
+  "item",
   "qty",
   "rate",
   "total"
@@ -29,7 +30,8 @@
   {
    "fieldname": "qty",
    "fieldtype": "Int",
-   "label": "Quantity"
+   "label": "Quantity",
+   "search_index": 1
   },
   {
    "fieldname": "rate",
@@ -42,12 +44,17 @@
    "is_virtual": 1,
    "label": "Total",
    "non_negative": 1
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "label": "Item"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-07 18:05:33.771087",
+ "modified": "2026-02-10 20:01:50.683648",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Testing",

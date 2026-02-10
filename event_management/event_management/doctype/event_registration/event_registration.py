@@ -44,7 +44,8 @@ class EventRegistration(Document):
 		participant_exist = frappe.db.exists(
 			"Event Registration",
 			{
-				"email": self.email
+				"email": self.email,
+				"event_date": self.event_date
 			}
 		)
 
