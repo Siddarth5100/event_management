@@ -63,18 +63,18 @@ class EventDetail(Document):
 		if getdate(self.date) < getdate():
 			frappe.throw("Enter current or future date")
 
-		time_overlap = frappe.db.exists(
-			"Event Detail",
-			{
-				"date": self.date,
-				"from_time": ("<" ,self.to_time),
-				"to_time": (">", self.from_time),
-				"location": self.location
-			}
-		) 
+		# time_overlap = frappe.db.exists(
+		# 	"Event Detail",
+		# 	{
+		# 		"date": self.date,
+		# 		"from_time": ("<" ,self.to_time),
+		# 		"to_time": (">", self.from_time),
+		# 		"location": self.location
+		# 	}
+		# ) 
 
-		if time_overlap:
-			frappe.throw("Already event exist on this time!")
+		# if time_overlap:
+		# 	frappe.throw("Already event exist on this time!")
 
 		
 		# # get event detail from db
