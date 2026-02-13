@@ -8,16 +8,19 @@ from frappe.model.document import Document
 class Organiser(Document):
 	def validate(self):
 		
-		# if empty field will return
-		if not self.email_id:
-			return
+		# # if empty field will return
+		# if not self.email_id:
+		# 	return
+
+		# if not self.mobile_number:
+		# 	frappe.msgprint("Error")
 
 		# validate organiser is already exist
 		exists = frappe.db.exists(
 			"Organiser",
 			{
-				"email_id": self.email_id,
-				"name": ["!=", self.name]
+				"email_id": self.email_id
+				# "name": ["!=", self.name]
 			}
 		)
 

@@ -8,16 +8,16 @@ frappe.get_list
 class Participant(Document):
 	def validate(self):
 
-		# if empty field will return
-		if not self.email:
-			return
+		# # if empty field will return
+		# if not self.email:
+		# 	return
 		
 		# validate exisitng user
 		exists = frappe.db.exists(
 			"Participant",
 			{
-				"email": self.email,
-				"name": ["!=", self.name]
+				"email": self.email
+				# "name": ["!=", self.name]
 			}
 		)
 			

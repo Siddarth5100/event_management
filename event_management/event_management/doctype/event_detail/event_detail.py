@@ -25,6 +25,19 @@ class EventDetail(Document):
 		# # if empty event name and date
 		# if not self.event_name or not self.date:
 		# 	frappe.throw("Date field is missing")
+
+		# check is same event name already exist on the same day
+		event_name = frappe.db.exists(
+			"Event Detail",
+			{
+			"event_name": self.event_name,
+			"date": self.date,
+			"location": self.location
+			}
+		)
+
+		if event_name:
+			frappe.throw("Already same event got registered today")
 		
 		# checking duplicate name and date for the event
 		exists = frappe.db.exists(

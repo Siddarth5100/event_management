@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_rename": 1,
  "autoname": "ORG-.###",
  "creation": "2026-01-12 13:53:10.083022",
  "doctype": "DocType",
@@ -17,8 +18,7 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Organiser Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "fieldname": "role",
@@ -46,11 +46,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-09 18:31:47.628300",
+ "modified": "2026-02-12 12:33:32.298597",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Organiser",
- "naming_rule": "By fieldname",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

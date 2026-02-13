@@ -12,34 +12,34 @@ class EventRegistration(Document):
 		# print("organiser value:", self.organiser, type(self.organiser))
 
 		# validate is user already registered to the event
-		exists = frappe.db.exists(
-			"Event Registration",
-			{
-				"email": self.email,
-				"event_detail": self.event_detail,
-				"docstatus": 0,
-				"name": ["!=", self.name]
-			}
-		)
+		# exists = frappe.db.exists(
+		# 	"Event Registration",
+		# 	{
+		# 		"email": self.email,
+		# 		"event_detail": self.event_detail,
+		# 		"docstatus": 0,
+		# 		"name": ["!=", self.name]
+		# 	}
+		# )
 	
-		if exists:
-			frappe.throw("Already registered to this event, select new one")
+		# if exists:
+		# 	frappe.throw("Already registered to another event")
 
-		# Organiser validation
-		organiser_name = frappe.db.exists(
-			"Event Registration",
-			{
-				"event_date": self.event_date,
-				"event_detail": ("!=", self.event_detail),
-				"organiser": self.organiser,
-				"from_time": ("=", self.from_time),
-				"to_time": ("=", self.to_time),
-				"docstatus": 0
-			}
-		)
+		# # Organiser validation
+		# organiser_name = frappe.db.exists(
+		# 	"Event Registration",
+		# 	{
+		# 		"event_date": self.event_date,
+		# 		"event_detail": ("!=", self.event_detail),
+		# 		"organiser": self.organiser,
+		# 		"from_time": ("=", self.from_time),
+		# 		"to_time": ("=", self.to_time),
+		# 		"docstatus": 0
+		# 	}
+		# )
 		
-		if organiser_name:
-			frappe.throw("Organiser already assigned")
+		# if organiser_name:
+		# 	frappe.throw("Organiser already assigned")
 
 		participant_exist = frappe.db.exists(
 			"Event Registration",
@@ -50,23 +50,23 @@ class EventRegistration(Document):
 		)
 
 		if participant_exist:
-			frappe.throw("Already registered to another event")
+			frappe.throw("Already registered to another event!!")
 
 
 
-	def on_submit(self):
-		if not self.email:
-			return
+	# def on_submit(self):
+	# 	if not self.email:
+	# 		return
 		
-		frappe.sendmail(
-			recipients = self.email,
-			subject = "Event Registration Confirmed",
-			message = f"""
-		Hello {self.participant},
+	# 	frappe.sendmail(
+	# 		recipients = self.email,
+	# 		subject = "Event Registration Confirmed",
+	# 		message = f"""
+	# 	Hello {self.participant},
 
-		Your registration for the event "{self.event_detail}" has been successfully submitted.
+	# 	Your registration for the event "{self.event_detail}" has been successfully submitted.
 
-		Thank you.
-		""",
-			now = True
-		)
+	# 	Thank you.
+	# 	""",
+	# 		now = True
+	# 	)
