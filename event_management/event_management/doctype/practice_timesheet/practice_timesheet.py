@@ -1,9 +1,11 @@
 # Copyright (c) 2026, siddarth and contributors
 # For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 
 class PracticeTimesheet(Document):
-	pass
+	def validate(self):
+		if not self.employee:
+			frappe.throw("Employee required (server)")

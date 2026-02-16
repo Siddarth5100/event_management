@@ -24,5 +24,7 @@ class Organiser(Document):
 			}
 		)
 
+		print(exists, type(exists))
+
 		if exists:
 			frappe.throw("Organiser already exist!")

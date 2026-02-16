@@ -26,10 +26,10 @@ def add_timesheet_value(data= None):
 
     return "timesheet"
 
-
-
-
-
+@frappe.whitelist()
+def get_timesheet_title(name):
+    doc = frappe.get_doc("Practice Timesheet", name)
+    return doc.title
 
 
 
