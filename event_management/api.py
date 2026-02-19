@@ -32,11 +32,9 @@ def get_timesheet_title(name):
     return doc.title
 
 
-
-
-
-
-
+@frappe.whitelist()
+def say_hello(name="Guest"):
+    return f"Hello, {name}"
 
 
 

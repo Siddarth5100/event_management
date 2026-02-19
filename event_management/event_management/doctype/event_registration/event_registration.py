@@ -41,11 +41,16 @@ class EventRegistration(Document):
 		# if organiser_name:
 		# 	frappe.throw("Organiser already assigned")
 
+		pass
+
+	def before_submit(self):
 		participant_exist = frappe.db.exists(
 			"Event Registration",
 			{
 				"email": self.email,
-				"event_date": self.event_date
+				"event_date": self.event_date,
+				"docstatus": 0,
+				"name": ("!=", self.name)
 			}
 		)
 

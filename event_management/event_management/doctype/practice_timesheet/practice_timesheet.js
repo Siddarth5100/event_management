@@ -236,3 +236,43 @@ frappe.ui.form.on("Practice Timesheet", {
         })
     }
 })
+
+
+// frappe.call({
+//     method: "event_management.say_hello",
+//     args: {name: "siddhu"},
+//     callback: function(r) {
+//         console.log(r, r.message)
+//     }
+// })
+
+
+frappe.ui.form.on("Practice Timesheet", {
+    validate(frm) {
+        console.log("--Validate !!")
+    }
+})
+
+frappe.ui.form.on("Practice Timesheet", {
+    refresh(frm) {
+        console.log("--refresh !!")
+    }
+})
+
+frappe.ui.form.on("Practice Timesheet", {
+    setup(frm) {
+        console.log("-- Onload !!")
+    }
+})
+
+frappe.ui.form.on("Practice Timesheet", {
+    setup(frm) {
+        console.log("--setup!!")
+    }
+})
+
+frappe.ui.form.on("Practice Timesheet", {
+    status(frm) {
+        console.log("status changed");
+    }
+})

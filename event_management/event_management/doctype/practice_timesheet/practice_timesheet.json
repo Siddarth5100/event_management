@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{TS}-{MM}-{###}",
  "creation": "2026-02-06 13:22:21.983339",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -218,10 +219,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-13 11:42:56.240271",
+ "modified": "2026-02-19 12:57:20.826867",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Practice Timesheet",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

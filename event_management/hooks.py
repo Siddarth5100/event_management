@@ -248,8 +248,15 @@ app_license = "mit"
 # ignore_translatable_strings_from = []
 
 
-scheduler_events = {
-    "daily": [
-        "event_management.event_management.tasks.send_event_reminders"
-    ]
+# scheduler_events = {
+#     "daily": [
+#         "event_management.event_management.tasks.send_event_reminders"
+#     ]
+# }
+
+doc_events = {
+    "Event Registration": {
+        "after_insert": "event_management.event_management.tasks.send_confirmation_email"
+    }
 }
+

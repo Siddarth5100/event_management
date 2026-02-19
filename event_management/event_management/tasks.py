@@ -32,3 +32,7 @@ is scheduled for tomorrow.
     )
 
     print("Reminder mails sent")
+
+
+def send_confirmation_email(doc, method):
+    print("Hook Triggered")

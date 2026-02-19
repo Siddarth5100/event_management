@@ -36,6 +36,7 @@
    "search_index": 1
   },
   {
+   "allow_on_submit": 1,
    "fetch_from": "amended_from.event_detail",
    "fieldname": "event_detail",
    "fieldtype": "Link",
@@ -147,7 +148,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-09 19:09:20.267482",
+ "modified": "2026-02-18 19:16:00.938997",
  "modified_by": "Administrator",
  "module": "Event Management",
  "name": "Event Registration",
